@@ -4,6 +4,7 @@ import java.net.*;
 public class Client {
     public static void main(String argv[]) {
         int port = 8080;
+        String host="localhost";
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             PrintWriter writer = new PrintWriter(System.out, true);
@@ -11,7 +12,7 @@ public class Client {
             writer.println("Enter a string:");
             String chaine = reader.readLine();
 
-            InetAddress adr = InetAddress.getByName("localhost");
+            InetAddress adr = InetAddress.getByName(host);
             Socket socket = new Socket(adr, port);
 
             ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());

@@ -22,7 +22,6 @@ public class Server {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            // Shutdown the thread pool when the server is done
             executorService.shutdown();
         }
     }
